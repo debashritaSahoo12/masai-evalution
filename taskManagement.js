@@ -31,9 +31,9 @@ function taskManagement() {
     },
     countTasks() {
       let count = tasks.reduce((acc, curr) => {
-        acc[curr.status]++
+        acc[curr.status]=(acc[curr.status]||0)+1
         return acc
-      }, { pending: 0, completed: 0 });
+      }, {});
       console.log(count)
       return this
     },
